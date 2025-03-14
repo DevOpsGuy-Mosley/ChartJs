@@ -15,11 +15,11 @@
                 <span class="hamburger"></span>
             </button>
             <ul class="nav-links">
-                <li><a href="#presentation">Présentation</a></li>
-                <li><a href="#installation">Installation</a></li>
-                <li><a href="#types-graphiques">Types de graphiques</a></li>
-                <li><a href="#personnalisation">Personnalisation</a></li>
-                <li><a href="#mise-a-jour">Mise à jour</a></li>
+                <li><a href="#presentation">Chart.js..?</a></li>
+                <li><a href="#Pourquoi utiliser Chart.js ?">Pourquoi utiliser Chart.js ?</a></li>
+                <li><a href="#installation">installation</a></li>
+                <li><a href="#types-graphiques">types de graphiques</a></li>
+                <li><a href="#Exemple">Exemple</a></li>
                 <li><a href="#integration">Intégration</a></li>
                 <li><a href="#Ressources">Ressources</a></li>
                 <li><a href="#conclusion">Conclusion</a></li>
@@ -32,7 +32,7 @@
 
         <!-- Section 1 : Présentation -->
         <div class="section" id="presentation">
-            <h2>1️⃣ Chart.js..?</h2>
+            <h2>1 Chart.js..?</h2>
             <p>
                 <strong>Chart.js</strong> est une bibliothèque JavaScript qui permet de créer des graphiques interactifs et personnalisables en HTML5. Elle utilise l’élément <code>&lt;canvas&gt;</code> et fonctionne sur tous les navigateurs modernes.
                 <img src="téléchargement.png" alt="Illustration Chart.js" class="section-image">
@@ -41,7 +41,7 @@
 
         <!-- Section 2 : Pourquoi utiliser Chart.js -->
         <div class="section">
-            <h2>2️⃣ Pourquoi utiliser Chart.js ?</h2>
+            <h2>2 Pourquoi utiliser Chart.js ?</h2>
             <ul>
                 <li>✅ Facile à utiliser</li>
                 <li>✅ Graphiques réactifs et interactifs</li>
@@ -53,7 +53,7 @@
 
         <!-- Section 3 : Installation -->
         <div class="section" id="installation">
-            <h2>3️⃣ Installation de Chart.js</h2>
+            <h2>3 Installation et mise a jour de Chart.js</h2>
             <h3>📥 Via un CDN (plus simple). </h3>
             <p>Un CDN (Content Delivery Network) est un réseau de serveurs répartis dans le monde qui stocke et distribue du contenu (comme des fichiers JavaScript, CSS, images, vidéos) afin d’optimiser la rapidité de chargement des sites web.</p>
             <p>Ajoute ce script dans ton fichier HTML :</p>
@@ -64,42 +64,16 @@
 
             <h3>📄 Via un fichier téléchargé</h3>
             <p>Télécharge Chart.js <a href="https://www.chartjs.org/" target="_blank">ici</a> et ajoute-le à ton projet.</p>
+            
+            <p>Si tu veux mettre à jour un graphique sans recharger la page, tu peux utiliser <code>.update()</code> :
+            </p>
+            <pre><code>monGraphique.data.datasets[0].data = [50, 60, 70]; // Nouvelle valeur 
+                    monGraphique.update(); // Rafraîchir le graphique</code></pre>
         </div>
 
-        <!-- Section 4 : Structure de base -->
-        <div class="section">
-            <h2>4️⃣ Structure de base d’un graphique</h2>
-            <p>Un graphique Chart.js se compose de 3 éléments :</p>
-            <ol>
-                <li>Un <code>&lt;canvas&gt;</code> dans le HTML</li>
-                <li>Un script JavaScript pour configurer le graphique</li>
-                <li>Des options pour personnaliser l’affichage</li>
-            </ol>
-            <p>Exemple minimal :</p>
-            <pre><code>&lt;canvas id="monGraphique"&gt;&lt;/canvas&gt;
-
-&lt;script&gt;
-  const ctx = document.getElementById('monGraphique').getContext('2d');
-  const monGraphique = new Chart(ctx, {
-    type: 'bar', // Type de graphique
-    data: {
-      labels: ['Janvier', 'Février', 'Mars'],
-      datasets: [{
-        label: 'Ventes',
-        data: [30, 45, 60],
-        backgroundColor: 'blue'
-      }]
-    },
-    options: {
-      responsive: true
-    }
-  });
-&lt;/script&gt;</code></pre>
-        </div>
-
-        <!-- Section 5 : Types de graphiques -->
+             <!-- Section 4 : Types de graphiques -->
         <div class="section" id="types-graphiques">
-            <h2>5️⃣ Types de graphiques disponibles</h2>
+            <h2>4 Types de graphiques disponibles</h2>
             <p>Chart.js prend en charge plusieurs types de graphiques :</p>
             <ul>
                 <li>🔹 Graphique en ligne (line)</li>
@@ -114,42 +88,19 @@
             </ul>
         </div>
 
-        <!-- Section 6 : Personnalisation -->
+        <!-- Section 5 : Exemple -->
         <div class="section" id="personnalisation">
-            <h2>6️⃣ Personnalisation des graphiques</h2>
-            <p>Chart.js permet une grande personnalisation :</p>
-            <h3>🎨 Couleurs et styles</h3>
-            <pre><code>backgroundColor: 'rgba(255, 99, 132, 0.5)', // Couleur de remplissage
-borderColor: 'rgba(255, 99, 132, 1)', // Couleur des bordures
-borderWidth: 2 // Épaisseur de la bordure</code></pre>
+            <h2>5 Exmple de code et resulat </h2>
+            <img src="/home/guy-mosley/Images/Captures d’écran/Capture d’écran du 2025-03-14 10-38-45.png" alt="Types de graphiques" class="section-image">
+            <img src="/home/guy-mosley/Images/Captures d’écran/Capture d’écran du 2025-03-14 10-39-03.png" alt="Types de graphiques" class="section-image">
+            <img src="/home/guy-mosley/Images/Captures d’écran/Capture d’écran du 2025-03-14 10-39-26.png" alt="Types de graphiques" class="section-image">
+            <img src="/home/guy-mosley/Images/Captures d’écran/Capture d’écran du 2025-03-14 10-42-57.png" alt="Types de graphiques" class="section-image">
 
-            <h3>📊 Légendes et titres</h3>
-            <pre><code>options: {
-  plugins: {
-    legend: { display: true, position: 'top' }, // Affichage de la légende
-    title: { display: true, text: 'Titre du Graphique' } // Titre du graphique
-  }
-}</code></pre>
-
-            <h3>⚙️ Axes et échelles</h3>
-            <pre><code>scales: {
-  y: { beginAtZero: true } // Commencer l'axe Y à 0
-}</code></pre>
         </div>
 
-        <!-- Section 7 : Mise à jour dynamique des données -->
-        <div class="section" id="mise-a-jour">
-            <h2>7️⃣ Mise à jour dynamique des données</h2>
-            <p>
-                Si tu veux mettre à jour un graphique sans recharger la page, tu peux utiliser <code>.update()</code> :
-            </p>
-            <pre><code>monGraphique.data.datasets[0].data = [50, 60, 70]; // Nouvelle valeur
-monGraphique.update(); // Rafraîchir le graphique</code></pre>
-        </div>
-
-        <!-- Section 8 : Intégration avec d’autres technologies -->
+        <!-- Section 6 : Intégration avec d’autres technologies -->
         <div class="section" id="integration">
-            <h2>8️⃣ Intégration avec d’autres technologies</h2>
+            <h2>6 Intégration avec d’autres technologies</h2>
             <p>Chart.js fonctionne avec :</p>
             <ul>
                 <li>✔️ React (via react-chartjs-2)</li>
@@ -160,9 +111,9 @@ monGraphique.update(); // Rafraîchir le graphique</code></pre>
 
             </ul>
         </div>
-<!-- Section 9 : Ressources pour apprendre Chart.js -->
+<!-- Section 7 : Ressources pour apprendre Chart.js -->
 <div class="section" id="Ressources">
-    <h2>9️⃣ Ressources pour apprendre Chart.js</h2>
+    <h2>7 Ressources pour apprendre Chart.js</h2>
 
     <h3>Documentation officielle</h3>
     <p>
@@ -190,7 +141,7 @@ monGraphique.update(); // Rafraîchir le graphique</code></pre>
     </p>
 </div>
         
-        <!-- Section 10 : Conclusion -->
+        <!-- Section 8 : Conclusion -->
         <div class="section" id="conclusion">
             <h2>Conclusion</h2>
             <p>
